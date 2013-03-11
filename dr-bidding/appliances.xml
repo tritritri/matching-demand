@@ -1,0 +1,54 @@
+
+<!--
+
+@brief: appliances' description for demand response simulation framework
+see also customers.xml
+
+created by: Tri Kurniawan Wijaya <tri-kurniawan.wijaya@epfl.ch>
+last modified: 29.02.2012
+
+what about:
+dishwasher
+dryer
+
+phev?
+air conditioner
+
+-->
+
+<appliances>
+	
+	<appliance id="1">
+		<name>microwave</name>
+		<power>300</power>
+	</appliance>
+	
+	<appliance id="2">
+		<name>television</name>
+		<power>50</power>
+	</appliance>
+	
+	<appliance id="3">
+		<name>washing machine</name>
+		<power>600</power>
+	</appliance>
+	
+	<appliance id="4">
+		<name>ambient</name>
+		<power>100</power>
+	</appliance>
+	
+	<appliance id="5">
+		<name>light</name>
+		<power>20</power>
+	</appliance>
+	
+	<appliance id="6">
+		<name>dishwasher</name>
+		<power>1000</power>
+	</appliance>	
+	
+</appliances>
+
+
+

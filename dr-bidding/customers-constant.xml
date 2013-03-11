@@ -1,0 +1,211 @@
+
+<!--
+
+@brief: customers' description for demand response simulation framework
+see also appliances.xml
+
+created by: Tri Kurniawan Wijaya <tri-kurniawan.wijaya@epfl.ch>
+last modified: 29.02.2012
+
+-->
+
+
+<!--
+v1.0: already captures shift and non-shifted appliances
+
+TODO:
+
+v2.0
+- describe utility
+- differentiation day of week
+
+v3.0 
+- privacy setting format
+
+v. not clear yet:
+- describing game model?
+
+v4.0
+- enable customer strategy definition by the means of declaratively
+
+? open questions:
+? how to simulate day-ahead or hourly-ahead
+
+* advantages:
+- thinking about minutes? instead of hours? crossing between hours?
+- day-to-day customer's electrity consumption behaviour for each appliance is changed
+- we fix the reqs for today and then find the opt scheduling
+-->
+
+
+<!--
+29.02.2012
+v1.0
+-->
+
+<customers>
+
+	<customer>
+	<type>1</type>
+	<count>30</count>
+	<appliances>
+	
+		<appliance>
+			<appid>1</appid>
+			<!-- microwave -->
+			<usagegroup>
+				<timeslot start="07:00" end="09:00" dev="01:00"/>
+				<!-- there could be more than one 'timeslot' in one 'usage'  -->
+				<duration dev="00:15" devUsage="00:00">00:30</duration>
+			</usagegroup>	
+			<usagegroup>
+				<timeslot start="18:00" end="21:00" dev="01:00"/>
+				<duration dev="00:10" devUsage="00:00">00:30</duration>
+			</usagegroup>	
+		</appliance>
+
+		<appliance>
+			<appid>2</appid>
+			<!-- television -->
+			<usagegroup>
+				<timeslot start="19:00" end="22:00" dev="01:00"/>
+				<duration dev="00:20" devUsage="00:00">01:30</duration>
+			</usagegroup>	
+		</appliance>
+
+		<appliance>
+			<appid>3</appid>
+			<!-- washing machine -->
+			<usagegroup>
+				<timeslot start="19:00" end="22:00" dev="02:00"/>
+				<timeslot start="16:00" end="19:00" dev="02:00"/>
+				<duration dev="00:10" devUsage="00:00">01:25</duration>
+			</usagegroup>	
+		</appliance>
+		<appliance>
+			<appid>4</appid>
+			<!-- light ambience -->
+			<usagegroup>
+				<timeslot start="00:00" end="00:00" dev="00:00"/>
+				<duration dev="00:00" devUsage="00:00">24:00</duration>
+			</usagegroup>	
+		</appliance>
+
+		<appliance>
+			<appid>5</appid>
+			<!-- light -->
+			<usagegroup>
+				<timeslot start="18:00" end="18:00" dev="01:00"/>
+				<duration dev="00:30" devUsage="00:00">07:00</duration>
+			</usagegroup>	
+		</appliance>
+
+		<appliance>
+			<appid>6</appid>
+			<!-- dishwasher -->
+			<usagegroup>
+				<timeslot start="21:00" end="23:00" dev="03:00"/>
+				<timeslot start="02:00" end="16:00" dev="02:00"/>
+				<duration dev="00:20" devUsage="00:00">00:40</duration>
+			</usagegroup>	
+		</appliance>
+
+		</appliances>	
+	</customer>
+	
+	
+	<!-- this customer type does not washing machine-->
+	<customer>
+	<type>2</type>
+	<count>70</count>
+	<appliances>
+	
+		<appliance>
+			<appid>1</appid>
+			<!-- microwave -->
+			<usagegroup>
+				<timeslot start="12:00" end="14:00" dev="02:00"/>
+				<duration dev="00:15" devUsage="00:00">00:30</duration>
+			</usagegroup>	
+			<usagegroup>
+				<timeslot start="19:00" end="22:00" dev="01:00"/>
+				<duration dev="00:10" devUsage="00:00">00:20</duration>
+			</usagegroup>	
+		</appliance>
+		
+		<appliance>
+			<appid>2</appid>
+			<!-- television -->
+			<usagegroup>
+				<timeslot start="12:00" end="16:00" dev="01:00"/>
+				<duration dev="01:00" devUsage="00:00">01:30</duration>
+			</usagegroup>	
+			<usagegroup>
+				<timeslot start="19:00" end="23:00" dev="01:00"/>
+				<duration dev="00:30" devUsage="00:00">02:00</duration>
+			</usagegroup>	
+		</appliance>
+		<!--
+		<appliance>
+			<appid>3</appid>
+			washer machine		
+			<usagegroup>
+				<timeslot start="06:00" end="09:00" dev="01:00"/>
+				<timeslot start="19:00" end="23:00" dev="02:00"/>
+				<duration dev="00:15" devUsage="00:00">01:16</duration>
+			</usagegroup>	
+		</appliance>
+		-->
+		
+		<appliance>
+			<appid>4</appid>
+			<!-- light ambience -->
+			<usagegroup>
+				<timeslot start="00:00" end="00:00" dev="00:00"/>
+				<duration dev="00:00" devUsage="00:00">24:00</duration>
+			</usagegroup>	
+		</appliance>
+		
+		<appliance>
+			<appid>5</appid>
+			<!-- light -->
+			<usagegroup>
+				<timeslot start="18:00" end="18:00" dev="01:00"/>
+				<duration dev="00:00" devUsage="00:00">06:00</duration>
+			</usagegroup>	
+		</appliance>
+		
+		<appliance>
+			<appid>6</appid>
+			<!-- dishwasher -->
+			<usagegroup>
+				<timeslot start="21:00" end="21:00" dev="02:00"/>
+				<timeslot start="02:00" end="16:00" dev="02:00"/>
+				<duration dev="00:20" devUsage="00:00">00:40</duration>
+			</usagegroup>	
+		</appliance>
+		
+	</appliances>	
+	</customer>
+	
+</customers>
+
+<!-- 
+Agenda today:
+1. read the input.xml file
+2. put into the datastructure: vector?
+customer:
+	id = integer
+	type = integer
+	appliances vector
+		app1
+			- vector of hourly slot [integer] for availability
+			- vector array requirement [1]= 00:30, [2]=01:00			
+		app2
+		
+3. build the customers, init the load-value for each customers, calculate/display the total/overall load
+4. play the game, each customer do random schedule 10 times, look at the best price she/he get, apply this schedule. 
+Run it once, see the difference
+Run it until converge
+Plot the overall cost over #day
+-->
